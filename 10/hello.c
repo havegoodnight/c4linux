@@ -4,7 +4,7 @@
 
 int main(int argc, char *argv[]){
 	char *ptr;
-	ptr = malloc(24);
+	ptr = (char *)malloc(24);
 	if (ptr == NULL){
 		printf("malloc error!");
 		exit(1); // or return 1;
