@@ -5,6 +5,10 @@
 int main(int argc, char *argv[]){
 	char *ptr;
 	ptr = malloc(24);
+	if (ptr == NULL){
+		printf("malloc error!");
+		exit(1); // or return 1;
+	}
 	strcpy(ptr, "Hello world!");
 	printf("The ptr is : %s\n", ptr);
 	free(ptr);	
