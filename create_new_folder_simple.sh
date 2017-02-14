@@ -28,12 +28,12 @@ echo "$1" >> ./README.md
 echo '```' >> ./README.md
 
 touch ./main.c
-echo '#include <stdio.h>' >> ./foo.c
-echo '' >> ./foo.c
-echo 'int main(int argc, char *argv[]){' >> ./foo.c
-echo '' >> ./foo.c
-echo '	return 0;' >> ./foo.c
-echo '}' >> ./foo.c
+echo '#include <stdio.h>' >> ./main.c
+echo '' >> ./main.c
+echo 'int main(int argc, char *argv[]){' >> ./main.c
+echo '' >> ./main.c
+echo '	return 0;' >> ./main.c
+echo '}' >> ./main.c
 
 touch ./Makefile
 echo 'main:main.o' >> ./Makefile
