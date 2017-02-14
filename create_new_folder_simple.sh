@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$#" != 1 ]; then
+	echo -e "Usage : \r\n\t$0 \"Description\""
+	exit 1
+fi
+
 get_max_number(){
 	return `ls | sort -n | tail -n 1`
 }
@@ -19,7 +24,7 @@ cd $max_number
 touch ./README.md
 echo '目标' >> ./README.md
 echo '```' >> ./README.md
-echo '' >> ./README.md
+echo "$1" >> ./README.md
 echo '```' >> ./README.md
 
 touch ./main.c
