@@ -1,7 +1,7 @@
-foo:foo.o
-	gcc -o foo foo.o
-foo.o:foo.c
-	gcc -c foo.c
+main:main.o
+	gcc -o main main.o
+main.o:main.c
+	gcc -c main.c
 clean:
-	rm ./foo.o
-	rm ./foo
+	rm ./main.o
+	rm ./main
