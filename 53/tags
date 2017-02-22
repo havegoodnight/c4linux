@@ -1,0 +1,25 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+DATA	main.c	/^struct DATA{$/;"	s	file:
+LINKEDLIST	main.c	/^struct LINKEDLIST{$/;"	s	file:
+NODE	main.c	/^struct NODE{$/;"	s	file:
+clearLinkedList	main.c	/^void clearLinkedList(struct LINKEDLIST *pLinkedList){$/;"	f
+deleteNode	main.c	/^void deleteNode(struct LINKEDLIST *pLinkedList, int index){$/;"	f
+deleteNodeTail	main.c	/^void deleteNodeTail(struct LINKEDLIST *pLinkedList){$/;"	f
+initLinkedList	main.c	/^void initLinkedList(struct LINKEDLIST *pLinkedList){$/;"	f
+insertNode	main.c	/^int insertNode(struct LINKEDLIST *pLinkedList, struct NODE *pNewNode, int index){$/;"	f
+insertNodeTail	main.c	/^int insertNodeTail(struct LINKEDLIST *pLinkedList, struct NODE *pNewNode){$/;"	f
+length	main.c	/^	int length;$/;"	m	struct:LINKEDLIST	file:
+main	main.c	/^int main(int argc, char *argv[]){$/;"	f
+number	main.c	/^	int number;$/;"	m	struct:DATA	file:
+pData	main.c	/^	struct DATA *pData;$/;"	m	struct:NODE	typeref:struct:NODE::DATA	file:
+pFirstNode	main.c	/^	struct NODE *pFirstNode;$/;"	m	struct:LINKEDLIST	typeref:struct:LINKEDLIST::NODE	file:
+pNext	main.c	/^	struct NODE *pNext;$/;"	m	struct:NODE	typeref:struct:NODE::NODE	file:
+printLinkedList	main.c	/^int printLinkedList(struct LINKEDLIST *pLinkedList){$/;"	f
+selectNode	main.c	/^struct NODE *selectNode(struct LINKEDLIST *pLinkedList, int index){$/;"	f
+selectNodeTail	main.c	/^struct NODE *selectNodeTail(struct LINKEDLIST *pLinkedList){$/;"	f
+updateNode	main.c	/^void updateNode(struct LINKEDLIST *pLinkedList, struct DATA *data, int index){$/;"	f
