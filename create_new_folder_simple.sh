@@ -37,7 +37,7 @@ echo '}' >> ./main.c
 
 touch ./Makefile
 echo 'main:main.o' >> ./Makefile
-echo '	gcc -o main main.o' >> ./Makefile
+echo '	gcc -g -o main main.o' >> ./Makefile
 echo 'main.o:main.c' >> ./Makefile
 echo '	gcc -c main.c' >> ./Makefile
 echo 'clean:' >> ./Makefile
