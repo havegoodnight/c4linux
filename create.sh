@@ -6,7 +6,7 @@ if [ "$#" != 1 ]; then
 fi
 
 get_max_number(){
-	return `ls | sort -n | tail -n 1`
+	return `ls | grep '[0-9]' | sort -n | tail -n 1`
 }
 
 get_max_number
@@ -15,31 +15,8 @@ max_number=$?
 echo "当前最大文件夹序号为 : $max_number"
 ((new_folder_name=$max_number+1))
 echo "新文件夹名 : " $new_folder_name
-mkdir $new_folder_name
+cp -r ./template $new_folder_name
 get_max_number
 max_number=$?
 echo "新文件夹创建成功 , 当前最大序号为 : " $max_number
-cd $max_number
-
-touch ./README.md
-echo '目标' >> ./README.md
-echo '```' >> ./README.md
-echo "$1" >> ./README.md
-echo '```' >> ./README.md
-
-touch ./main.c
-echo '#include <stdio.h>' >> ./main.c
-echo '' >> ./main.c
-echo 'int main(int argc, char *argv[]){' >> ./main.c
-echo '' >> ./main.c
-echo '	return 0;' >> ./main.c
-echo '}' >> ./main.c
-
-touch ./Makefile
-echo 'main:main.o' >> ./Makefile
-echo '	gcc -o main main.o' >> ./Makefile
-echo 'main.o:main.c' >> ./Makefile
-echo '	gcc -g -c main.c' >> ./Makefile
-echo 'clean:' >> ./Makefile
-echo '	rm ./main.o' >> ./Makefile
-echo '	rm ./main' >> ./Makefile
+sed -i "s/__DESCRIPTION__/${1}/g" ./$max_number/README.md
